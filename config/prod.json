@@ -1,0 +1,7 @@
+{
+  "host": {
+    "name": "https://garden.takoda.net",
+    "port": 3111,
+    "dbName": "test"
+  }
+}

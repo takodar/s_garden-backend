@@ -1,0 +1,7 @@
+{
+  "host": {
+      "name": "http://localhost:3110",
+      "port": 3110,
+      "dbName": "test"
+    }
+}

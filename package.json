@@ -1,0 +1,21 @@
+{
+  "name": "services.takoda.net",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "config": "^1.26.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "jade": "~1.11.0",
+    "mongodb": "^2.2.30",
+    "morgan": "~1.8.1",
+    "request": "^2.81.0",
+    "serve-favicon": "~2.4.2"
+  },
+  "scripts": {
+    "start-express-prod": "export NODE_ENV=prod; node ./bin/www",
+    "start-express-dev": "export NODE_ENV=dev; node ./bin/www"
+  }
+}
