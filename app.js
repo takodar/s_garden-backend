@@ -12,10 +12,8 @@ var s_garden = require('./routes/s_garden_get');
 var locations = require('./routes/locations');
 // var hnhh = require('./routes/hotnewhiphop');
 
-//TODO setup config file for host
 var config = require('config');
 var hostName = config.get('host.name');
-console.log(hostName);
 
 var app = express();
 app.use(function(req, res, next) {
