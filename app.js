@@ -10,7 +10,12 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var s_garden = require('./routes/s_garden_get');
 var locations = require('./routes/locations');
-// var hnhh = require('./routes/hotnewhiphop');
+
+var engine = require("ejs-locals");
+var passport = require("passport");
+var session = require("express-session");
+var routes = require("./auth_routes/routes");
+
 
 var config = require('config');
 var hostName = config.get('host.name');
@@ -25,7 +30,8 @@ app.use(function(req, res, next) {
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.engine("ejs", engine);
+app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -35,12 +41,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+    secret: "tank and spank",
+    resave: true,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.use('/', index);
+// app.use('/', index);
 app.use('/users', users);
 app.use('/s_garden_trees', s_garden);
 app.use('/locations', locations);
-// app.use('/hotnewhiphop', hnhh);
+
+app.use(routes);
+
+
 app.use('/s_garden_trees/:slug', function(req, res) {
     MongoClient.connect('mongodb://lsands:Sandy427!@ds137291.mlab.com:37291/s_garden', (err, db) => {
         treeId = req.params.slug;

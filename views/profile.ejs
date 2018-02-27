@@ -1,0 +1,23 @@
+<% layout("layout") -%>
+<div class="jumbotron text-center">
+	<h1>Profile</h1>
+    <a href="/logout" class="btn btn-default">Logout</a>
+</div>
+
+<div class="row">
+
+<h3>Account Info</h3>
+<ul>
+	<% if (user.id) { %>
+		<li>ID: <%= user.id %></li>
+		<li>Email: <%= user.email %></li>
+		<li>Token: <%= user.token %></li>
+		<li>Type: <%= user.type %></li>
+
+	<% }  %>
+
+
+</ul>
+
+
+</div>
