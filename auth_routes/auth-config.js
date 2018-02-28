@@ -38,8 +38,8 @@ passport.use("local-register", new LocalStrategy({
 }, localInit));
 
 const facebookConfig = {
-    clientID: "1854048231505343",
-    clientSecret: "74bc3873991e888cba66d16cb0519340",
+    clientID: "1826819544266505",
+    clientSecret: "e7d805bc58e798bc04fdd04a8d80de62",
     callbackURL: "http://localhost:3111/facebook/callback",
     passReqToCallback: true,
     profileFields: ['id', 'displayName', 'emails', 'photos']
@@ -55,14 +55,14 @@ const twitterConfig = {
 };
 
 const googleConfig = {
-    clientID: '205697855294-j1ibep3glo58ng8k6hmltcrlpbla1n14.apps.googleusercontent.com',
-    clientSecret: 'mf2q9MnCVIB3vKELNcKhXlRb',
+    clientID: '275500112782-ad2p28nanrpc62eacdr8mfqgh0pr7bk1.apps.googleusercontent.com',
+    clientSecret: 'GDFkyvDNJH-SdnoH1GHK_EvY',
     callbackURL: 'http://localhost:3111/google/callback'
 };
 
 const linkedinConfig = {
-    clientID: '77nuozx1l9zbt7',
-    clientSecret: 'gMDdasNVtJ3c0qAl',
+    clientID: '86xx0814qduicq',
+    clientSecret: 'Zxc5Bunkj3qJ9dwq',
     callbackURL: 'http://localhost:3111/linkedin/callback',
     profileFields: ['id', 'first-name', 'last-name', 'email-address', 'headline'],
     state: true,
